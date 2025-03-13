@@ -6,6 +6,7 @@ public class LongestConsecutiveSequence {
         int size = scanner.nextInt();
 
         int[] nums = new int[size];
+        scanner.nextLine();
         for (int i = 0; i < size ; i++) {
             nums[i] = scanner.nextInt();
         }
