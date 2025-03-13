@@ -16,15 +16,31 @@ public class MoveZreos {
         System.out.println(Arrays.toString(nums));
     }
 
+//    public static void solution(int[] nums) {
+//        int index = 0;
+//        for (int num : nums) {
+//            if (num != 0){
+//                nums[index++] = num;
+//            }
+//        }
+//        for (int i = index; i < nums.length; i++) {
+//            nums[i] = 0;
+//        }
+//    }
+
+    /**
+     * Solution 2
+     */
     public static void solution(int[] nums) {
-        int index = 0;
-        for (int num : nums) {
-            if (num != 0){
-                nums[index++] = num;
+        int lp = 0, rp = 0;
+        for (int ignored : nums) {
+            if (nums[rp] != 0) {
+                int temp = nums[lp];
+                nums[lp] = nums[rp];
+                nums[rp] = temp;
+                lp++;
             }
-        }
-        for (int i = index; i < nums.length; i++) {
-            nums[i] = 0;
+            rp++;
         }
     }
 }
