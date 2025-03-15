@@ -16,7 +16,7 @@ public class LongestConsecutiveSequence {
     }
 
     public static int solution(int[] nums) {
-//  Fail:
+//  FAIL:
 //        if (nums == null) {
 //            return 0;
 //        }
