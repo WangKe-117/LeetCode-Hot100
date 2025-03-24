@@ -23,13 +23,13 @@ public class ThreeSum {
         List<List<Integer>> result = new ArrayList<>();
         for (int i = 0; i < length - 2; i++) {
             int x = nums[i];
-            if (x + nums[i+1] + nums[i+2] > 0) {
+            if (x + nums[i + 1] + nums[i + 2] > 0) {
                 break;
             }
-            if (x + nums[length-1] + nums[length-2] < 0) {
+            if (x + nums[length - 1] + nums[length - 2] < 0) {
                 continue;
             }
-            if (i > 0 && nums[i] == nums[i-1]) {
+            if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
             int lp = i + 1, rp = length - 1;
@@ -42,12 +42,12 @@ public class ThreeSum {
                     List<Integer> ans = Arrays.asList(x, nums[lp], nums[rp]);
                     result.add(ans);
                     lp++;
-                    while (lp < rp && nums[lp] == nums[lp-1]){
-                        lp ++;
+                    while (lp < rp && nums[lp] == nums[lp - 1]){
+                        lp++;
                     }
                     rp--;
-                    while (lp < rp && nums[rp] == nums[rp+1]){
-                        rp --;
+                    while (lp < rp && nums[rp] == nums[rp + 1]){
+                        rp--;
                     }
                 }
             }
