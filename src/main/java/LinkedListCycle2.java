@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 /**
- * 141. 环形链表
+ * 142. 环形链表2
  */
-public class LinkedListCycle {
+public class LinkedListCycle2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -28,8 +28,8 @@ public class LinkedListCycle {
             end.next = start; //构建环形链表
         }
 
-        boolean result = solution(head);
-        System.out.println(result);
+        SinglyListNode result = solution(head);
+        System.out.println(result.val);
     }
 
     public static SinglyListNode buildLinkList(int[] arr) {
@@ -48,15 +48,27 @@ public class LinkedListCycle {
         return head;
     }
 
-    public static boolean solution(SinglyListNode head) {
-        SinglyListNode slow = head, fast = head;
+    public static SinglyListNode solution(SinglyListNode head) {
+        SinglyListNode slow = head, fast = head, cur = head;
+        boolean exist = false;
+
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
             if (fast == slow) {
-                return true;
+               exist = true;
+               break;
             }
         }
-        return false;
+
+        if (exist) {
+            while (cur != slow) {
+                cur = cur.next;
+                slow = slow.next;
+            }
+            return cur;
+        } else {
+            return null;
+        }
     }
 }
