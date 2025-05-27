@@ -64,7 +64,7 @@ public class LinkedListCycle2 {
         if (exist) {
             while (cur != slow) {
                 cur = cur.next;
-                slow = slow.next;
+                slow = slow.next; //慢指针和头节点一起走并相遇
             }
             return cur;
         } else {
